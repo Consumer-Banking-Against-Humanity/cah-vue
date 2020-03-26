@@ -1,0 +1,23 @@
+type Game {
+  id: ID!
+  name: String!
+}
+
+type Player {
+  id: ID!
+  name: String!
+}
+
+type Round {
+  id: ID!
+  status: String!
+  czar: Player! # 👨‍🌾
+  submissions: [Submission]
+}
+
+type Submission {
+  id: ID!
+  # player: Player! = owner
+  round: Round!
+  cards: [Card]!
+}
